@@ -1,0 +1,297 @@
+/* Synced with JiazheWei.github.io main@a7eddec (2026-08-16). */
+
+/* Compact research-interest map for the About section. */
+.research-focus-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+  margin: 0.75em 0 1.2em;
+  padding: 0;
+  list-style: none;
+  counter-reset: research-focus;
+}
+
+.research-focus-list li {
+  display: grid;
+  grid-template-columns: 2.15rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75em 0.85em;
+  border: 1px solid var(--c-border);
+  border-left: 3px solid rgba(var(--glow-rgb), 0.58);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(237, 242, 250, 0.72) 100%);
+  counter-increment: research-focus;
+}
+
+.research-focus-list li::before {
+  content: counter(research-focus, decimal-leading-zero);
+  padding-top: 0.08em;
+  color: rgba(var(--glow-rgb), 0.62);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.research-focus-title {
+  display: block;
+  color: var(--c-text);
+  line-height: 1.35;
+}
+
+.research-focus-list li span {
+  display: block;
+  margin-top: 0.2em;
+  color: inherit;
+  font-size: 0.9em;
+  font-weight: 500;
+  line-height: 1.5;
+  opacity: 0.76;
+}
+
+@media (min-width: 48em) {
+  .research-focus-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Publication resource links — icon-led buttons replacing bracketed links. */
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.5em 0 0.8em;
+}
+
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42em;
+  min-height: 2.35rem;
+  box-sizing: border-box;
+  padding: 0.42em 0.78em;
+  border: 1.5px solid var(--c-border);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--c-bg-start) 0%, var(--c-bg-end) 100%);
+  color: var(--c-text) !important;
+  font-size: 0.88em;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(26, 54, 84, 0.06);
+  transition: background 0.18s ease, border-color 0.18s ease,
+    box-shadow 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.paper-link i {
+  width: 1.05em;
+  color: var(--paper-link-accent);
+  font-size: 1.04em;
+  text-align: center;
+}
+
+.paper-link:hover {
+  border-color: var(--paper-link-accent);
+  background: var(--paper-link-hover-bg);
+  color: var(--c-hover-text) !important;
+  text-decoration: none !important;
+  box-shadow: 0 3px 10px rgba(var(--glow-rgb), 0.14);
+  transform: translateY(-1px);
+}
+
+.paper-link:focus-visible {
+  outline: 2px solid var(--paper-link-accent);
+  outline-offset: 2px;
+  text-decoration: none !important;
+}
+
+.paper-link:active {
+  transform: translateY(0);
+}
+
+.paper-link--pdf {
+  --paper-link-accent: #b31b1b;
+  --paper-link-hover-bg: #fff1f0;
+  border-color: rgba(179, 27, 27, 0.24);
+  background: linear-gradient(135deg, #ffffff 0%, #fff6f5 100%);
+}
+
+.paper-link--project {
+  --paper-link-accent: #2873a8;
+  --paper-link-hover-bg: #edf7ff;
+  border-color: rgba(40, 115, 168, 0.24);
+  background: linear-gradient(135deg, #ffffff 0%, #f3f9ff 100%);
+}
+
+.paper-link--code {
+  --paper-link-accent: #24292f;
+  --paper-link-hover-bg: #f0f2f4;
+  border-color: rgba(36, 41, 47, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f6f7 100%);
+}
+
+.paper-link__arxiv-mark {
+  color: var(--paper-link-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.paper-link__stars {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.28em;
+  margin-left: 0.12em;
+  padding-left: 0.52em;
+  border-left: 1px solid rgba(36, 41, 47, 0.2);
+  color: #805b10;
+  font-size: 0.88em;
+  font-variant-numeric: tabular-nums;
+}
+
+.paper-link__stars[hidden] {
+  display: none;
+}
+
+.paper-link__stars i {
+  width: auto;
+  color: #b7791f;
+  font-size: 0.8em;
+}
+
+@media (max-width: 480px) {
+  .paper-links {
+    gap: 0.4rem;
+  }
+
+  .paper-link {
+    min-height: 2.75rem;
+    padding: 0.48em 0.82em;
+  }
+}
+
+/* Keep the reference 35/65 publication layout while matching both columns'
+   visual height. Figures use contain so scientific diagrams are never cropped. */
+@media (min-width: 48em) {
+  .paper-box {
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+
+  .paper-box .paper-box-image {
+    align-items: stretch;
+    flex: 0 0 35%;
+    width: auto;
+    max-width: 35%;
+  }
+
+  .paper-box .paper-box-image > div {
+    display: block;
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .paper-box .paper-box-image a {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 3px 3px 6px #888;
+  }
+
+  .paper-box .paper-box-image .badge {
+    z-index: 1;
+  }
+
+  .paper-box .paper-box-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    object-fit: contain;
+    box-shadow: none;
+  }
+
+  .paper-box .paper-box-text {
+    display: flex;
+    flex: 1 1 65%;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 65%;
+  }
+
+  .paper-box .paper-box-text > p {
+    margin-top: 0;
+    margin-bottom: 0.65em;
+  }
+
+  .paper-box .paper-links {
+    margin-bottom: 0;
+  }
+}
+
+/* Latest three-project card layout and media behavior. */
+.app-cards--projects {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1em;
+}
+
+@media (min-width: 40em) {
+  .app-cards--projects {
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  }
+}
+
+.app-card {
+  min-width: 0;
+}
+
+.app-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+  margin-bottom: 0.45em;
+  background: var(--c-bg-end);
+}
+
+.app-card__video {
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.app-card__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-top: auto;
+  padding-top: 0.25em;
+  color: inherit;
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.76;
+}
+
+.app-card__meta i {
+  color: #b7791f;
+  font-size: 0.9em;
+}

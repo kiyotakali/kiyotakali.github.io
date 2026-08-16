@@ -18,6 +18,7 @@
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
     </script>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/latest-components.css">
     <meta http-equiv="cleartype" content="on">
     <base target="_blank">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +63,7 @@
             <h3 class="author__name">Ken Li <br> (李垦)</h3>
             <p class="author__bio">Incoming PhD Student at Nanjing University</p>
           </div>
-          <p class="author__direction">Focusing on Video World Model, Embodied AI, and Agentic Image &amp; Video Generation.</p>
+          <p class="author__direction">Video World Models · Embodied AI · Agentic Image &amp; Video Generation · Human-Centric Agentic AI</p>
           <div class="author__social-icons">
             <a href="mailto:2223312154@stu.xjtu.edu.cn" title="Email" aria-label="Email"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
             <a href="https://scholar.google.com/citations?user=-wXqlyYAAAAJ" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i></a>
@@ -82,7 +83,34 @@
 
             <p>Hi! I am <strong>Ken Li (李垦)</strong>, an <u>incoming PhD student</u> majoring in Artificial Intelligence at Nanjing University and doing research at <a href="https://prlab-nju.com/nju/">Pattern Recognition Lab</a> @NJU, supervised by Prof. <a href="https://scholar.google.com/citations?hl=en&amp;user=XdahAuoAAAAJ">Chenyang Si</a> and Prof. <a href="https://scholar.google.com/citations?user=W-FGd_UAAAAJ&amp;hl=en">Tieniu Tan</a>. I got my bachelor degree at Xi’an Jiaotong University.</p>
 
-            <p>I have completed several wonderful research internships at CERN, Westlake University, and Lovart.AI, and I have met many open and outstanding researchers during my experience. My research interests focus on: <strong>1) Video World Model; 2) Embodied AI; 3) Agentic Image &amp; Video Generation</strong>.</p>
+            <p>I have completed several wonderful research internships at CERN, Westlake University, and Lovart.AI, and I have met many open and outstanding researchers during my experience. My current research interests are:</p>
+
+            <ol class="research-focus-list" aria-label="Research interests">
+              <li>
+                <div>
+                  <strong class="research-focus-title">Video World Models</strong>
+                  <span>Learning predictive representations of dynamic visual environments for simulation, understanding, and planning.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong class="research-focus-title">Embodied AI</strong>
+                  <span>Connecting multimodal perception, world modeling, and action for agents operating in the physical world.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong class="research-focus-title">Agentic Image &amp; Video Generation</strong>
+                  <span>Studying both VLM-orchestrated visual agents and generative models with native planning and self-refinement, independent of external VLMs.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong class="research-focus-title">Human-Centric Agentic AI</strong>
+                  <span>Building life-grounded agents that unify digital traces and physical observations into user-controlled memory and decision support—the <em>VibeLife</em> vision.</span>
+                </div>
+              </li>
+            </ol>
 
             <p>✨ <span class="highlight-red"><em>I’m always open to all kinds of cooperation and discussion.</em></span> <strong>You can contact me via email or WeChat: kiyotakali.</strong></p>
 
@@ -118,6 +146,23 @@
             <div class="paper-box" data-core="true">
               <div class="paper-box-image">
                 <div>
+                  <div class="badge preprint">Report</div>
+                  <a href="https://arxiv.org/pdf/2608.02602"><img src="/images/aurora-lm-figure3.png" alt="AURORA-LM overview pipeline" width="100%"></a>
+                </div>
+              </div>
+              <div class="paper-box-text">
+                <p><a class="PaperTitle" href="https://arxiv.org/pdf/2608.02602"><b>AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling</b></a> <br>
+                <span class="venue-card">Report, 2026</span> <br>
+                Jiajun Liang*, Yucheng Liao*, Yukang Cao*, Jiazhe Wei, <strong><span class="author-highlight">Ken Li</span></strong>, Wende Tan, Jiankun Zhang, ZY Cui, Jingkang Yang, Liucheng Guo, Shiqi Yang, B. Yang, Caifeng Shan, Ziwei Liu, Chenyang Si†</p>
+                <div class="paper-links" role="group" aria-label="AURORA-LM resources">
+                  <a class="paper-link paper-link--pdf" href="https://arxiv.org/pdf/2608.02602"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>PDF</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-box" data-core="true">
+              <div class="paper-box-image">
+                <div>
                   <div class="badge core">Poster</div>
                   <a href="/images/postercopilot-template.png"><img src="/images/postercopilot-template.png" alt="PosterCopilot" width="100%"></a>
                 </div>
@@ -125,25 +170,17 @@
               <div class="paper-box-text">
                 <p><a class="PaperTitle" href="https://arxiv.org/pdf/2512.04082"><b>PosterCopilot: Toward Layout Reasoning and Controllable Editing for Professional Graphic Design</b></a> <br>
                 <span class="venue-card">ECCV, 2026</span> <br>
-                Jiazhe Wei*, <strong><span class="author-highlight">Ken Li*</span></strong>, Tianyu Lao, Haofan Wang, Liang Wang, Caifeng Shan, Chenyang Si† <br>
-                [<a href="https://arxiv.org/pdf/2512.04082">PDF</a>] [<a href="https://postercopilot.github.io/">Project Page</a>] [<a href="https://github.com/JiazheWei/PosterCopilot">Code</a>] [<a href="https://github.com/JiazheWei/PosterCopilot" data-github-repo="JiazheWei/PosterCopilot" data-fallback-stars="199" aria-label="PosterCopilot on GitHub, 199 stars"><i class="fas fa-star" aria-hidden="true"></i> <span class="github-star-count" aria-live="polite">199 stars</span></a>]</p>
-                <p><strong>TL;DR:</strong> <em>We introduce PosterCopilot, a layout-reasoning and controllable-editing framework for professional graphic design that supports layer-level, multi-round, high-fidelity editing.</em></p>
-              </div>
-            </div>
-
-            <div class="paper-box" data-core="true">
-              <div class="paper-box-image">
-                <div>
-                  <div class="badge oral">Oral</div>
-                  <a href="/images/ni-gdba.png"><img src="/images/ni-gdba.png" alt="NI-GDBA" width="100%"></a>
+                Jiazhe Wei*, <strong><span class="author-highlight">Ken Li*</span></strong>, Tianyu Lao, Haofan Wang, Liang Wang, Caifeng Shan, Chenyang Si†</p>
+                <div class="paper-links" role="group" aria-label="PosterCopilot resources">
+                  <a class="paper-link paper-link--pdf" href="https://arxiv.org/pdf/2512.04082"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>PDF</span></a>
+                  <a class="paper-link paper-link--project" href="https://postercopilot.github.io/"><i class="fas fa-globe" aria-hidden="true"></i><span>Project Page</span></a>
+                  <a class="paper-link paper-link--code" href="https://github.com/JiazheWei/PosterCopilot" data-github-repo="JiazheWei/PosterCopilot" data-fallback-stars="199">
+                    <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+                    <span class="paper-link__stars" data-github-star-display role="img" aria-label="199 GitHub stars">
+                      <i class="fas fa-star" aria-hidden="true"></i><span data-github-star-count>199</span>
+                    </span>
+                  </a>
                 </div>
-              </div>
-              <div class="paper-box-text">
-                <p><a class="PaperTitle" href="https://dl.acm.org/doi/10.1145/3696410.3714630"><b>NI-GDBA: Non-Intrusive Distributed Backdoor Attack Based on Adaptive Perturbation on Federated Graph Learning</b></a> <br>
-                <span class="venue-card">WWW, 2025</span> <br>
-                <strong><span class="author-highlight">Ken Li</span></strong>, Bin Shi†, Jiazhe Wei, Bo Dong <br>
-                [<a href="https://dl.acm.org/doi/10.1145/3696410.3714630">PDF</a>] [<a href="https://github.com/kiyotakali/NI-GDBA">Code</a>]</p>
-                <p><strong>TL;DR:</strong> <em>We propose a non-intrusive graph distributed backdoor attack that does not require backdoor triggers to be injected into the training data.</em></p>
               </div>
             </div>
 
@@ -157,9 +194,30 @@
               <div class="paper-box-text">
                 <p><a class="PaperTitle" href="https://arxiv.org/abs/2603.07743"><b>Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning</b></a> <br>
                 <span class="venue-card">ICLR Trustworthy AI Workshop, 2026</span> <br>
-                Jinshan Liu*, <strong><span class="author-highlight">Ken Li*</span></strong>, Jiazhe Wei, Bin Shi†, Bo Dong <br>
-                [<a href="https://arxiv.org/pdf/2603.07743">PDF</a>] [<a href="https://trustworthy-ai-workshop.github.io/iclr2026/papers">Workshop</a>] [<a href="https://github.com/shanhe321/FedShift">Code</a>]</p>
-                <p><strong>TL;DR:</strong> <em>We introduce FedShift, a two-stage distributed adversarial attack that hides learnable shifters during training and efficiently finds effective perturbations after federated learning.</em></p>
+                Jinshan Liu*, <strong><span class="author-highlight">Ken Li*</span></strong>, Jiazhe Wei, Bin Shi†, Bo Dong</p>
+                <div class="paper-links" role="group" aria-label="Hide and Find resources">
+                  <a class="paper-link paper-link--pdf" href="https://arxiv.org/pdf/2603.07743"><span class="paper-link__arxiv-mark" aria-hidden="true">arXiv</span><span>PDF</span></a>
+                  <a class="paper-link paper-link--project" href="https://trustworthy-ai-workshop.github.io/iclr2026/papers"><i class="fas fa-globe" aria-hidden="true"></i><span>Workshop</span></a>
+                  <a class="paper-link paper-link--code" href="https://github.com/shanhe321/FedShift"><i class="fab fa-github" aria-hidden="true"></i><span>Code</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-box" data-core="true">
+              <div class="paper-box-image">
+                <div>
+                  <div class="badge oral">Oral</div>
+                  <a href="/images/ni-gdba.png"><img src="/images/ni-gdba.png" alt="NI-GDBA" width="100%"></a>
+                </div>
+              </div>
+              <div class="paper-box-text">
+                <p><a class="PaperTitle" href="https://dl.acm.org/doi/10.1145/3696410.3714630"><b>NI-GDBA: Non-Intrusive Distributed Backdoor Attack Based on Adaptive Perturbation on Federated Graph Learning</b></a> <br>
+                <span class="venue-card">WWW, 2025</span> <br>
+                <strong><span class="author-highlight">Ken Li</span></strong>, Bin Shi†, Jiazhe Wei, Bo Dong</p>
+                <div class="paper-links" role="group" aria-label="NI-GDBA resources">
+                  <a class="paper-link paper-link--pdf" href="https://dl.acm.org/doi/10.1145/3696410.3714630"><i class="fas fa-file-pdf" aria-hidden="true"></i><span>PDF</span></a>
+                  <a class="paper-link paper-link--code" href="https://github.com/kiyotakali/NI-GDBA"><i class="fab fa-github" aria-hidden="true"></i><span>Code</span></a>
+                </div>
               </div>
             </div>
 
@@ -173,25 +231,11 @@
               <div class="paper-box-text">
                 <p><a class="PaperTitle" href="https://link.springer.com/article/10.1007/s10994-025-06849-3"><b>ALM-PU: Positive and Unlabeled Learning with Constrained Optimization</b></a> <br>
                 <span class="venue-card">ECML-PKDD, 2025</span> <br>
-                Jiazhe Wei*, Yuefei Wu*, Bin Shi†, <strong><span class="author-highlight">Ken Li</span></strong>, Bo Dong <br>
-                [<a href="https://link.springer.com/article/10.1007/s10994-025-06849-3">PDF</a>] [<a href="https://github.com/xjtu-wjz/ALM-PU-Positive-and-Unlabeled-Learning-with-Constrained-Optimization">Code</a>]</p>
-                <p><strong>TL;DR:</strong> <em>We propose a constrained-optimization framework for positive-unlabeled learning that improves sample discrimination and reduces negative classification bias.</em></p>
-              </div>
-            </div>
-
-            <div class="paper-box" data-core="true">
-              <div class="paper-box-image">
-                <div>
-                  <div class="badge preprint">Report</div>
-                  <a href="https://arxiv.org/pdf/2608.02602"><img src="/images/aurora-lm-figure3.png" alt="AURORA-LM overview pipeline" width="100%"></a>
+                Jiazhe Wei*, Yuefei Wu*, Bin Shi†, <strong><span class="author-highlight">Ken Li</span></strong>, Bo Dong</p>
+                <div class="paper-links" role="group" aria-label="ALM-PU resources">
+                  <a class="paper-link paper-link--pdf" href="https://link.springer.com/article/10.1007/s10994-025-06849-3"><i class="fas fa-file-pdf" aria-hidden="true"></i><span>PDF</span></a>
+                  <a class="paper-link paper-link--code" href="https://github.com/xjtu-wjz/ALM-PU-Positive-and-Unlabeled-Learning-with-Constrained-Optimization"><i class="fab fa-github" aria-hidden="true"></i><span>Code</span></a>
                 </div>
-              </div>
-              <div class="paper-box-text">
-                <p><a class="PaperTitle" href="https://arxiv.org/pdf/2608.02602"><b>AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling</b></a> <br>
-                <span class="venue-card">Report, 2026</span> <br>
-                Jiajun Liang*, Yucheng Liao*, Yukang Cao*, Jiazhe Wei, <strong><span class="author-highlight">Ken Li</span></strong>, Wende Tan, Jiankun Zhang, ZY Cui, Jingkang Yang, Liucheng Guo, Shiqi Yang, B. Yang, Caifeng Shan, Ziwei Liu, Chenyang Si† <br>
-                [<a href="https://arxiv.org/pdf/2608.02602">PDF</a>]</p>
-                <p><strong>TL;DR:</strong> <em>We introduce a continuous-latent diffusion language model that combines a decodable, prefix-aligned text representation with block-causal latent generation.</em></p>
               </div>
             </div>
 
@@ -205,9 +249,10 @@
               <div class="paper-box-text">
                 <p><a class="PaperTitle" href="https://openreview.net/pdf?id=Hk4Fb6kaYF"><b>CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling</b></a> <br>
                 <span class="venue-card">ICLR, 2026</span> <br>
-                Chang Yu*, Siyuan Li*, Zicheng Liu, Jingbo Zhou, Xianglong Guo, Kai Yu, Yuqing Zhou, <strong><span class="author-highlight">Ken Li</span></strong>, Zelin Zang, Zhen Lei†, Stan Z. Li† <br>
-                [<a href="https://openreview.net/pdf?id=Hk4Fb6kaYF">PDF</a>]</p>
-                <p><strong>TL;DR:</strong> <em>We introduce CDBridge, a two-stage post-training strategy that bridges frozen DNA and protein foundation models for context-aware cross-omics modeling.</em></p>
+                Chang Yu*, Siyuan Li*, Zicheng Liu, Jingbo Zhou, Xianglong Guo, Kai Yu, Yuqing Zhou, <strong><span class="author-highlight">Ken Li</span></strong>, Zelin Zang, Zhen Lei†, Stan Z. Li†</p>
+                <div class="paper-links" role="group" aria-label="CDBridge resources">
+                  <a class="paper-link paper-link--pdf" href="https://openreview.net/pdf?id=Hk4Fb6kaYF"><i class="fas fa-file-pdf" aria-hidden="true"></i><span>PDF</span></a>
+                </div>
               </div>
             </div>
 
@@ -260,31 +305,36 @@
               </div>
             </div>
 
-            <hr>
-
-            <div style="display: flex; align-items: center; margin-bottom: 20px;">
-              <img src="images/xjtu.png" alt="BDKElab" style="width: 100px; height: 100px; margin-right: 20px; object-fit: contain; flex-shrink: 0;">
-              <div>
-                <p style="margin: 0;"><strong><a href="https://bdkelab.xjtu.edu.cn/sysjj/sysjj.htm">BDKElab</a>, Xi'an Jiaotong University</strong></p>
-                <p style="margin: 5px 0; font-size: 14px;"><em>2023.09 - 2024.10, Research Assistant, Xi'an, China</em></p>
-                <p style="margin: 5px 0; font-size: 14px;">This was a period filled with bitterness and twists and turns -- a detour I had to take in my research career. Despite this, I remain grateful for the experience, as it taught me early on what kind of taste an independent researcher should cultivate, what abilities they must possess, and the importance of reaching outward to embrace the whole world.</p>
-              </div>
-            </div>
-
             <h1 id="-my-projects"><i class="fas fa-th-large section-icon"></i> My Projects</h1>
 
-            <div class="app-cards">
-              <a class="app-card" href="https://github.com/kiyotakali/Miru" data-github-repo="kiyotakali/Miru" data-fallback-stars="64" aria-label="Miru on GitHub, 64 stars">
+            <div class="app-cards app-cards--projects">
+              <a class="app-card" href="https://mirulife.top/" data-github-repo="kiyotakali/Miru" data-fallback-stars="66" rel="noopener noreferrer">
                 <span class="app-card__inner">
-                  <img src="images/miru.png" alt="Miru open-source AI companion" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 7px; margin-bottom: 0.45em;">
+                  <img class="app-card__image" src="images/miru-project-og.png" alt="Miru open-source AI companion project artwork" width="1200" height="630" loading="lazy" decoding="async">
                   <span class="app-card__name">Miru 見る</span>
                   <span class="app-card__desc">Open-source AI companion with verifiable long-term memory, proactive companionship, and self-hosted multi-device synchronization.</span>
-                  <span class="app-card__desc"><i class="fas fa-star" aria-hidden="true"></i> <span class="github-star-count" aria-live="polite">64 stars</span></span>
+                  <span class="app-card__meta" data-github-star-display role="img" aria-label="66 GitHub stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <span data-github-star-count>66</span><span aria-hidden="true"> stars</span>
+                  </span>
                 </span>
               </a>
-              <a class="app-card" href="https://github.com/Team-Ferry/Paranormal-XJTU">
+
+              <a class="app-card" href="https://postercopilot.github.io/" data-github-repo="JiazheWei/PosterCopilot" data-fallback-stars="199" rel="noopener noreferrer">
                 <span class="app-card__inner">
-                  <img src="images/paranormal-xjtu.png" alt="Paranormal-XJTU game screenshot" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 7px; margin-bottom: 0.45em;">
+                  <video class="app-card__image app-card__video" poster="images/postercopilot-demo-v2.webp" width="640" height="360" muted loop playsinline preload="none" data-lazy-video data-src="assets/videos/postercopilot-demo-v2.mp4" data-playback-rate="1.5" aria-hidden="true"></video>
+                  <span class="app-card__name">PosterCopilot</span>
+                  <span class="app-card__desc">Layout reasoning and controllable editing for professional graphic design, with layer-level, multi-round, high-fidelity editing.</span>
+                  <span class="app-card__meta" data-github-star-display role="img" aria-label="199 GitHub stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <span data-github-star-count>199</span><span aria-hidden="true"> stars</span>
+                  </span>
+                </span>
+              </a>
+
+              <a class="app-card" href="https://github.com/Team-Ferry/Paranormal-XJTU" rel="noopener noreferrer">
+                <span class="app-card__inner">
+                  <img class="app-card__image" src="images/paranormal-xjtu-gameplay.png" alt="Paranormal-XJTU campus gameplay scene" width="552" height="397" loading="lazy" decoding="async">
                   <span class="app-card__name">Paranormal-XJTU</span>
                   <span class="app-card__desc">A 2D narrative game developed with Unity, set on a university campus filled with supernatural incidents and mysteries.</span>
                 </span>
