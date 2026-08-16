@@ -245,7 +245,7 @@
   }
 }
 
-/* Latest three-project card layout and media behavior. */
+/* Project card layout and media behavior. */
 .app-cards--projects {
   grid-template-columns: minmax(0, 1fr);
   gap: 1em;
@@ -253,7 +253,7 @@
 
 @media (min-width: 40em) {
   .app-cards--projects {
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
