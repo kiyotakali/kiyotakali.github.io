@@ -185,12 +185,13 @@ function toggleNews() {
 
   var btnText = btn.querySelector('span');
   var isExpanded = content.classList.contains('expanded');
+  btn.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
 
   if (isExpanded) {
     content.style.maxHeight = content.scrollHeight + 'px';
     content.classList.remove('expanded');
     requestAnimationFrame(function() { requestAnimationFrame(function() {
-      content.style.maxHeight = '300px';
+      content.style.maxHeight = 'var(--news-collapsed-height)';
     }); });
     if (btnText) btnText.textContent = 'Show More';
   } else {
