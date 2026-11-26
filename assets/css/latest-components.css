@@ -291,6 +291,10 @@
   opacity: 0.76;
 }
 
+.app-card__meta[hidden] {
+  display: none;
+}
+
 .app-card__meta i {
   color: #b7791f;
   font-size: 0.9em;

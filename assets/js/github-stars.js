@@ -3,7 +3,9 @@
 
   var REFRESH_MS = 30 * 60 * 1000;
   var CHECK_MS = 60 * 1000;
+  var MIN_DISPLAYED_STARS = 100;
   var CACHE_PREFIX = "kiyotakali:github-stars:";
+  var COMPACT_SCALE = { k: 1000, m: 1000000, b: 1000000000, t: 1000000000000 };
   var inFlight = {};
 
   function getTrackers() {
@@ -26,9 +28,36 @@
     return null;
   }
 
+  function starValue(count) {
+    var raw;
+    var compact;
+    if (typeof count === "number") {
+      if (!Number.isFinite(count) || count < 0 || Math.floor(count) !== count) return null;
+      return count;
+    }
+    if (typeof count !== "string") return null;
+    raw = count.trim();
+    if (/^\d+$/.test(raw)) return Number(raw);
+    compact = /^(\d+(?:\.\d+)?)([kKmMbBtT])$/.exec(raw);
+    if (!compact) return null;
+    return Number(compact[1]) * COMPACT_SCALE[compact[2].toLowerCase()];
+  }
+
+  function shouldDisplayStars(count) {
+    var value = starValue(count);
+    return value !== null && value >= MIN_DISPLAYED_STARS;
+  }
+
+  function hideDisplay(display, countNode) {
+    countNode.textContent = "";
+    display.removeAttribute("aria-label");
+    display.hidden = true;
+  }
+
   function renderCount(repository, count) {
     var formatted = formatCount(count);
     if (!formatted) return;
+    var visible = shouldDisplayStars(count);
 
     getTrackers().forEach(function (tracker) {
       if (tracker.getAttribute("data-github-repo") !== repository) return;
@@ -36,9 +65,24 @@
       var countNode = tracker.querySelector("[data-github-star-count]");
       if (!display || !countNode) return;
 
+      if (!visible) {
+        hideDisplay(display, countNode);
+        return;
+      }
+
       countNode.textContent = formatted;
       display.setAttribute("aria-label", formatted + " GitHub stars");
       display.hidden = false;
+    });
+  }
+
+  function hideSubthresholdFallbacks() {
+    getTrackers().forEach(function (tracker) {
+      var display = tracker.querySelector("[data-github-star-display]");
+      var countNode = tracker.querySelector("[data-github-star-count]");
+      if (!display || !countNode || display.hidden) return;
+      if (shouldDisplayStars(countNode.textContent.trim())) return;
+      hideDisplay(display, countNode);
     });
   }
 
@@ -75,11 +119,11 @@
       if (!response.ok) throw new Error("Star service returned " + response.status);
       return response.json();
     }).then(function (data) {
-      var formatted = formatCount(data && data.value);
-      if (!formatted) throw new Error("Star service returned an invalid count");
-      renderCount(repository, formatted);
-      writeCache(repository, formatted);
-      return formatted;
+      var value = data && data.value;
+      if (!formatCount(value)) throw new Error("Star service returned an invalid count");
+      renderCount(repository, value);
+      writeCache(repository, value);
+      return value;
     });
 
     inFlight[repository] = request.then(function (count) {
@@ -112,6 +156,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     if (!getTrackers().length) return;
+    hideSubthresholdFallbacks();
     refreshCounts();
     window.setInterval(refreshCounts, CHECK_MS);
     document.addEventListener("visibilitychange", function () {
